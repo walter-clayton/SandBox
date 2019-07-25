@@ -1,0 +1,4 @@
+.site {
+	display: grid;
+	
+}
