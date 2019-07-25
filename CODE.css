@@ -1,0 +1,55 @@
+.site {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto 1fr 3fr;
+		/* fr is the frame a.k.a fractional units, which will devide the viewport (size of the browser window) into the amount of fr you put in,
+		fr will be proportional to 1fr. E.g. 3fr will be 3x bigger to 1fr
+		auto will fill in the gaps e.g. 3fr + 1fr - the viewport = auto
+		https://www.slideshare.net/mor10/css-grid-changes-everything-about-web-layouts-wordcamp-europe-2017*/
+		grid-template-areas: 
+		"title title title"
+		"main header header"
+		"main sidebar footer";
+}
+
+.masterhead {
+	grid-area: header;
+	grid-column: 2/4;
+	grid-row: 2/3;
+}
+
+.page-title {
+	grid-area: title;
+	grid-column: 1/4;
+	grid-row: 1/2;
+}
+
+.main-content {
+	grid-area: main;
+	grid-column: 1/2;
+	grid-row: 2/4;
+}
+
+.sidebar {
+	grid-area: sidebar;
+	grid-column: 2/3;
+	grid-row: 3/4;
+}
+
+.footer {
+	grid-area: footer;
+	grid-column: 3/4;
+	grid-row: 3/4;
+}
+
+/*Using media queries are a popular technique for delivering a tailored style sheet to desktops, 
+laptops, tablets, and mobile phones (such as iPhone and Android phones).*/
+
+@media screen and (min-width: 34em) {
+	.site {
+grid-template-areas: 
+		"title title title"
+		"main header header"
+		"main sidebar footer";
+	}
+}
